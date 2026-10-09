@@ -1,36 +1,4 @@
-
-$fuente-principal: "Oswald", sans-serif;
-$color-base: #eee;
-$color-letra: black;
-
-@mixin escritorio-mediano {
-    @media (max-width: 1400px){
-        @content;
-    }
-}
-@mixin texto-formato($tamano, $peso: normal, $alineacion: left, $espacio: normal) {
-    font-family: $fuente-principal;
-    font-size: $tamano;
-    font-weight: $peso;
-    text-align: $alineacion;
-    letter-spacing: $espacio;
-}
-@mixin flex-conf($direccion: row, $justify: center, $aling: center, $gap: 0) {
-    display: flex;
-    flex-direction: $direccion;
-    justify-content: $justify;
-    align-items: $aling;
-    gap: $gap;
-}
-
-%img-principal-config {
-    height: 80dvh; 
-    object-fit: cover;
-    aspect-ratio: unset;
-}
-
-
-
+@use 'herramientas';
 
 *{
     margin:0;
@@ -40,7 +8,7 @@ $color-letra: black;
                                 /*   BARRA DE NAVEGACION  */
 
 header {
-    @include flex-conf (row, space-between, center, 0);
+    @include herramientas.flex-conf (row, space-between, center, 0);
     height: 7rem;
     padding: 1rem 2rem;
 
@@ -50,13 +18,13 @@ header {
         }
 
     .header__ul-nav{
-        @include flex-conf (row, space-around, center, clamp(1rem, 2vw, 3rem));
+        @include herramientas.flex-conf (row, space-around, center, clamp(1rem, 2vw, 3rem));
         flex-wrap: wrap; 
         list-style: none;
         }
     
     .header__link{
-        @include texto-formato(clamp(0.9rem, 2vw, 1.80rem), 650, left, 0.4em);
+        @include herramientas.texto-formato(clamp(0.9rem, 2vw, 1.80rem), 650, left, 0.4em);
         display: block;
         padding: 
         clamp(0.7rem, 3vh, 2.3rem)  
@@ -74,10 +42,10 @@ header {
 
                                 
 .seccion-imagenes {
-    @include flex-conf (row, center, stretch, 3rem);
+    @include herramientas.flex-conf (row, center, stretch, 3rem);
     margin: 2rem; 
    
-    @include escritorio-mediano{
+    @include herramientas.escritorio-mediano{
         flex-direction:column;
         gap:1rem;
         margin:1rem;
@@ -86,7 +54,7 @@ header {
         &__principal {
             width: calc(60% - 1.2rem); 
             @extend %img-principal-config;
-            @include escritorio-mediano{
+            @include herramientas.escritorio-mediano{
                 width:100%; 
             }
 
@@ -94,7 +62,7 @@ header {
         &__segunda {
             width: calc(25% - 0.9rem);
             @extend %img-principal-config;
-            @include escritorio-mediano{ 
+            @include herramientas.escritorio-mediano{ 
                 display: none;
             }
 
@@ -102,14 +70,14 @@ header {
         &__tercera {
             width: calc(15% - 0.9rem);
             @extend %img-principal-config;
-            @include escritorio-mediano{ 
+            @include herramientas.escritorio-mediano{ 
                 display: none;
             }
         }
         &__banner{
             display: none;
             @extend %img-principal-config;
-            @include escritorio-mediano{
+            @include herramientas.escritorio-mediano{
                 display: block;
                 width: 100%;
                 height: 6rem;
@@ -124,16 +92,16 @@ header {
  
 .eventos{
     h2{
-        @include texto-formato(clamp(2rem, 6vw, 6rem), 650, center, normal);
+        @include herramientas.texto-formato(clamp(2rem, 6vw, 6rem), 650, center, normal);
         width: 100%;
         margin-top: 10rem;
         margin-bottom: 3.5rem;
 
     }
     &__tarjeta{
-        @include flex-conf(row, space-around, center,0);
+        @include herramientas.flex-conf(row, space-around, center,0);
         margin:1.5rem;
-        @include escritorio-mediano{
+        @include herramientas.escritorio-mediano{
             flex-direction: column-reverse;
         }
 
@@ -141,7 +109,7 @@ header {
         img{
             width: 40%;
             
-            @include escritorio-mediano{
+            @include herramientas.escritorio-mediano{
                 width: 90%;
                 height: 90vh;
                 object-fit: cover;
@@ -152,19 +120,19 @@ header {
     &__texto{
         width: 40%;
         padding: 1rem;
-        @include escritorio-mediano{
+        @include herramientas.escritorio-mediano{
             width: 100%;
             }
         
         h3{
-            @include texto-formato(clamp(2rem, 4vw, 5rem), 650, center, normal);
+            @include herramientas.texto-formato(clamp(2rem, 4vw, 5rem), 650, center, normal);
             margin-bottom: 5rem;
 
 
         }
         p{
-            @include texto-formato(clamp(1.6rem, 3.5vw, 4.5rem), normal, center, normal);
-            @include escritorio-mediano{ 
+            @include herramientas.texto-formato(clamp(1.6rem, 3.5vw, 4.5rem), normal, center, normal);
+            @include herramientas.escritorio-mediano{ 
                 display: none;
             }
         }
@@ -179,7 +147,7 @@ header {
 
 .merch {
     h2{
-        @include texto-formato(clamp(2rem, 6vw, 6rem), 650, center, normal);
+        @include herramientas.texto-formato(clamp(2rem, 6vw, 6rem), 650, center, normal);
         width: 100%;
         margin-top: clamp(2rem, 9vw, 17rem);
         margin-bottom: 5rem;
@@ -200,8 +168,8 @@ header {
         }
     }
     &__tarjeta{
-        @include flex-conf(column, space-between, center, 0);
-        padding: 15px;
+        @include herramientas.flex-conf(column, space-between, center, 0);
+        padding: 20px;
         border: 1px solid #eee;
         border-radius: 8px;
         box-shadow: 0 4px 6px rgba(0,0,0,0.05);
@@ -212,23 +180,20 @@ header {
             border-radius: 4px;
         }
         h3{
-            @include texto-formato(clamp(1rem, 2.5vw, 2rem), normal, center, normal);
+            @include herramientas.texto-formato(clamp(1rem, 2.5vw, 2rem), normal, center, normal);
         }
         p{
-            @include texto-formato(clamp(1rem, 2.5vw, 2rem), normal, center, normal);
+            @include herramientas.texto-formato(clamp(1rem, 2.5vw, 2rem), normal, center, normal);
         }
     }
 
     &__button{
-    @include texto-formato(clamp(0.7rem, 2vw, 2rem), 650, center, 0.1rem);
+    @include herramientas.texto-formato(clamp(0.7rem, 2vw, 2rem), 650, center, 0.1rem);
     width: 70%;
-    height: clamp(2.5rem, 2vw, 4.5rem);
-    color: $color-base;
-    background-color: $color-letra;
+    height: clamp(2.5rem, 2.5vw, 4.5rem);
+    color: herramientas.$color-base;
+    background-color: herramientas.$color-letra;
     border-radius: 30px;
     cursor: pointer;
     }
 }
-
-
-

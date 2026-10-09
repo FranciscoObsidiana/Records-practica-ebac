@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/main.css">
     <title>Records</title>
 
 
@@ -105,27 +105,48 @@
                     <p>80</p>
                     <button class="merch__button ">COMPRAR</button>
                 </article>
-
-                <article class="merch__tarjeta">
-                    <img src="img/dorado.jfif">
-                    <h3> GORRA "nombre banda</h3>
-                    <p>300</p>
-                    <button class="merch__button ">COMPRAR</button>
-                </article>
-
-                <article class="merch__tarjeta">
-                    <img src="img/dorado.jfif">
-                    <h3> PLAYERA "nombre banda</h3>
-                    <p>150</p>
-                    <button class="merch__button ">COMPRAR</button>
-                </article>
-
             </section>
-            
-
         </section>
 
-
+        <h2 class="contactanos-titulo">Firma con Nosotros</h2>
+        <section class="contactanos">
+            <div class="contactanos__form">
+            <form>
+                <div class="contactanos__input">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre Completo" required>
+                </div>
+                <div class="contactanos__input">
+                    <label for="correo">Correo:</label>
+                    <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
+                </div>
+                <div class="contactanos__input">
+                    <label for="telefono">Número:</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Numero de telefono" pattern="[0-9]{10}" required>
+                </div>
+                <div class="contactanos__input">
+                    <label for="nombre-banda">Nombre de la banda:</label>
+                    <input type="text" id="nombre-banda" name="nombre-banda" placeholder="Nombre de la banda" required>
+                </div>
+                <div>
+                    
+                <div class="contactanos__input-txt">
+                    <input type="checkbox" id="autorizacion-ws" name="autorizacion-ws" value="autorizo" >
+                    <label for="autorizacion-ws">Contactarme por Whatsapp</label>
+                </div>
+                <div class="contactanos__input-txt">
+                    <input type="checkbox" id="autorizo-publicdad" name="autorizo-publicdad " value="=autorizo">
+                    <label for="autorizo-publicidad">Informame sobre proximos eventos</label>
+                </div>
+            </div>
+            <button class="contactanos__btn" type="submit">Quiero formar parte</button>
+            <form>
+            </div>
+            
+            <div class="contactanos__img">
+                <img src="img/nosotros-img.jpg">
+            </div>
+        </section>
 
     </main>
 
