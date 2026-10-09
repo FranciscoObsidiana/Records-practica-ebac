@@ -1,4 +1,4 @@
-.seccion-imagenes__banner, .seccion-imagenes__tercera, .seccion-imagenes__segunda, .seccion-imagenes__principal {
+.seccion-imagenes__principal, .seccion-imagenes__segunda, .seccion-imagenes__tercera, .seccion-imagenes__banner {
   height: 80dvh;
   -o-object-fit: cover;
      object-fit: cover;
@@ -196,7 +196,7 @@ header .header__link {
   justify-content: space-between;
   align-items: center;
   gap: 0;
-  padding: 15px;
+  padding: 20px;
   border: 1px solid #eee;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -228,9 +228,110 @@ header .header__link {
   text-align: center;
   letter-spacing: 0.1rem;
   width: 70%;
-  height: clamp(2.5rem, 2vw, 4.5rem);
+  height: clamp(2.5rem, 2.5vw, 4.5rem);
   color: #eee;
   background-color: black;
   border-radius: 30px;
   cursor: pointer;
-}/*# sourceMappingURL=styles.css.map */
+}
+
+.contactanos-titulo {
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(2rem, 6vw, 6rem);
+  font-weight: 650;
+  text-align: center;
+  letter-spacing: normal;
+  width: 100%;
+  margin-top: 10rem;
+  margin-bottom: clap(0rem, 2vw, 3rem);
+}
+
+.contactanos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+  padding: clamp(30px, 20vw, 60px);
+}
+.contactanos__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0;
+  width: 40%;
+  margin: clamp(20px, 10vw, 70px);
+}
+@media (max-width: 1000px) {
+  .contactanos__form {
+    width: 100%;
+    margin-right: clamp(20px, 8vw, 80px);
+  }
+}
+.contactanos__img {
+  width: 60%;
+}
+@media (max-width: 1000px) {
+  .contactanos__img {
+    display: none;
+  }
+}
+.contactanos__img img {
+  width: 100%;
+}
+.contactanos__input {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0;
+  margin-bottom: 40px;
+  gap: 5px;
+}
+.contactanos__input label {
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(1rem, 4vw, 4rem);
+  font-weight: 650;
+  text-align: left;
+  letter-spacing: 0;
+}
+.contactanos__input input {
+  width: 100%;
+  border: 1.5px solid #d1d5db;
+  padding: 10px 20px;
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(1rem, 2vw, 2rem);
+  font-weight: 400;
+  text-align: left;
+  letter-spacing: 0;
+  border-radius: 10px;
+}
+.contactanos__input-txt {
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(0.3rem, 1.5vw, 1rem);
+  font-weight: 500;
+  text-align: left;
+  letter-spacing: 0;
+}
+@media (max-width: 1000px) {
+  .contactanos__input-txt {
+    font-size: 1rem;
+  }
+}
+.contactanos__btn {
+  margin-top: 10px;
+  background: rgb(14, 154, 235);
+  border: none;
+  padding: 20px 30px;
+  margin-top: 30px;
+  color: rgb(255, 255, 255);
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(1rem, 2vw, 2rem);
+  font-weight: 400;
+  text-align: left;
+  letter-spacing: 0;
+  cursor: pointer;
+  outline: none;
+  border-radius: 10px;
+}/*# sourceMappingURL=main.css.map */

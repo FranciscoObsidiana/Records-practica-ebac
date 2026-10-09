@@ -1,0 +1,69 @@
+@use 'herramientas';
+
+.contactanos-titulo{
+    @include herramientas.texto-formato(clamp(2rem, 6vw, 6rem), 650, center, normal);
+    width: 100%;
+    margin-top: 10rem;
+    margin-bottom: clap(0rem, 2vw, 3rem);
+    }
+
+
+.contactanos{
+    @include herramientas.flex-conf (row, space-between, center, 0);
+    padding: clamp(30px, 20vw, 60px);
+    &__form{
+        @include herramientas.flex-conf (column, flex-start,  flex-start, 0);
+        width: 40%;
+        margin: clamp(20px, 10vw, 70px);
+         @include herramientas.celular{
+         width: 100%;
+         margin-right: clamp(20px, 8vw, 80px);
+         
+        }
+        
+    }
+    &__img{
+        width: 60%;
+        @include herramientas.celular{
+            display: none;
+        }
+        img{
+          width: 100%
+        
+        }
+    }
+
+    &__input{
+        @include herramientas.flex-conf (column, flex-start, flex-start, 0);
+        margin-bottom: 40px;
+        gap: 5px;
+        label{
+            @include herramientas.texto-formato(clamp(1rem, 4vw, 4rem), 650, left, 0);
+        }
+        input{
+            width: 100%; 
+            border: 1.5px solid #d1d5db;
+            padding: 10px 20px;
+            @include herramientas.texto-formato(clamp(1rem, 2vw, 2rem), 400, left, 0);
+            border-radius: 10px;
+        }
+    }
+    &__input-txt{
+        @include herramientas.texto-formato(clamp(0.3rem, 1.5vw, 1rem), 500, left, 0);
+        @include herramientas.celular{
+         font-size:1rem;
+        }
+    }
+    &__btn{
+        margin-top: 10px;
+        background: rgb(14, 154, 235);
+        border: none;
+        padding: 20px 30px;
+        margin-top: 30px;
+        color: rgb(255, 255, 255);
+        @include herramientas.texto-formato(clamp(1rem, 2vw, 2rem), 400, left, 0);
+        cursor: pointer;
+        outline: none;
+        border-radius: 10px;
+    }
+}
